@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:battleground_pro/app/utils/res/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: CustomColors.primaryColorBackground,
+        primarySwatch: Colors.blue
       ),
       defaultTransition: Transition.topLevel,
       initialRoute: Routes.SPLASH,

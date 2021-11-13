@@ -10,8 +10,6 @@ class LoginController extends BaseController {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  bool enablePassfiled = false;
-  bool enableContinueBtn = false;
   bool obscureText = true;
 
   // loginClick() async {
@@ -45,33 +43,27 @@ class LoginController extends BaseController {
   //   }
   // }
 
-  registration() {
-    Get.toNamed(Routes.REGISTRATION);
-  }
 
-  onEmailTextChange(String? string) {
-    if (string != null && string.isNotEmpty) {
-      enablePassfiled = true;
-    } else {
-      enablePassfiled = false;
-      enableContinueBtn = false;
-      passwordController.text = "";
-    }
-    update();
-  }
+
 
   passwordVisibility() {
     obscureText = !obscureText;
     update();
   }
 
-  onPasswordTextChange(String? string) {
-    if (string != null && string.isNotEmpty) {
-      enableContinueBtn = true;
-    } else {
-      enableContinueBtn = false;
-    }
 
-    update();
+
+
+
+  onSignInClick() {
+    Get.toNamed(Routes.REGISTRATION);
+  }
+
+  onContactUsClick() {
+    Get.toNamed(Routes.REGISTRATION);
+  }
+
+  loginClick() {
+    Get.offAllNamed(Routes.HOME);
   }
 }

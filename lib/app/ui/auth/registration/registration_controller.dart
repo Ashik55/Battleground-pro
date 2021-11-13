@@ -9,8 +9,11 @@ class RegistrationController extends BaseController {
 
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  TextEditingController mobileController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController promoController = TextEditingController();
 
   bool obscureText = true;
   //

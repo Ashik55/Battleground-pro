@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomColors {
-  static const Color lightRed = Color(0xFFFE0000);
-  static const Color customBlack = Color(0xFF333333);
-  static const Color customBlackLite = Color(0xFF525252);
-  static const Color background = Color(0xFFF2F2F6);
 
-
-  static const Color cl1 = Color(0xFFFFF1F1);
-  static const Color cl2 = Color(0xFFFDDBDB);
-  static const Color cl3 = Color(0xFFDEC9FF);
-  static const Color cl4 = Color(0xFFC9D9FF);
-  static const Color cl5 = Color(0xFFC9FFDC);
-
+  static const Color primaryColorBackground = Color(0xFF1f1f2e);
+  static const Color primaryButtonColor = Color(0xff193153);
+  static const Color primaryColorText = Color(0xffffffff);
+  static const Color primaryIconColor = Color(0xffffffff);
+  static const Color secondaryColor = Color(0xff11cfa3);
+  static const Color ButtonColor = Color(0xff1a1a1a);
+  static const Color highlightColor = Color(0xffffae00);
+  static const Color saleColor = Color(0xffff3f3f);
 
 
 }

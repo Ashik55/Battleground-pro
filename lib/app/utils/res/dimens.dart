@@ -10,6 +10,7 @@ class Dimens {
 
 
   //Radius
+  static const radiusNone = 4.0;
   static const radiusMin = 8.0;
   static const radiusMid = 12.0;
   static const radiusLarge = 18.0;
@@ -31,7 +32,7 @@ class Dimens {
 
   // Text Field Size
   static const textFieldSmall = 45.0;
-  static const textFieldMid = 52.0;
+  static const textFieldMid = 50.0;
 
 
 

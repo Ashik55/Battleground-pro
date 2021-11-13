@@ -1,3 +1,4 @@
+import 'package:battleground_pro/app/utils/helper/utility.dart';
 import 'package:battleground_pro/app/utils/res/colors.dart';
 import 'package:battleground_pro/app/utils/res/dimens.dart';
 import 'package:flutter/material.dart';
@@ -8,16 +9,15 @@ import 'registration_controller.dart';
 class RegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var HEIGHT = MediaQuery.of(context).size.height;
-    var WIDTH = MediaQuery.of(context).size.width;
 
     return GetBuilder<RegistrationController>(
         builder: (controller) => Scaffold(
-            backgroundColor: Colors.white,
+            backgroundColor: CustomColors.primaryColorBackground,
             appBar: AppBar(
               elevation: 0,
-              iconTheme: const IconThemeData(color: CustomColors.customBlack),
-              backgroundColor: Colors.white,
+              title: Text("Sign In"),
+              iconTheme: const IconThemeData(color: CustomColors.primaryIconColor),
+              backgroundColor: Colors.transparent,
             ),
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -25,182 +25,247 @@ class RegistrationScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: BouncingScrollPhysics(),
                 children: [
+                  SizedBox(height: 20,),
+                  
                   Center(
-                    child: Image.asset(
-                      'assets/images/logo.png',
-                      height: 120,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Text(
-                    "Registration",
-                    style: TextStyle(fontSize: 20, color: Colors.black54),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  SizedBox(
-                    height: Dimens.textFieldMid,
-                    child: TextField(
-                      controller: controller.firstNameController,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 16),
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        hintText: "First Name",
-                        hintStyle: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 14),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(Dimens.radiusMid),
+                      child: Image.asset(
+                        'assets/images/reg_banner.jpg',
+                        fit: BoxFit.cover,
+                        height: 80,
+                        width: getMaxWidth(context),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  SizedBox(
-                    height: Dimens.textFieldMid,
-                    child: TextField(
-                      controller: controller.lastNameController,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 16),
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        hintText: "Last Name",
-                        hintStyle: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 14),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  SizedBox(
-                    height: Dimens.textFieldMid,
-                    child: TextField(
-                      controller: controller.emailController,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 16),
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        hintText: "Email Address",
-                        hintStyle: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 14),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  SizedBox(
-                    height: Dimens.textFieldMid,
-                    child: TextField(
-                      controller: controller.passwordController,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 16),
-                      obscureText: controller.obscureText,
-                      decoration: InputDecoration(
-                        suffixIcon: IconButton(
-                          icon: Icon(controller.obscureText
-                              ? Icons.visibility_off
-                              : Icons.visibility),
-                          onPressed: () => controller.passwordVisibility(),
-                          color: Colors.grey.shade500,
-                        ),
-                        hintText: "Password",
-                        hintStyle: TextStyle(
-                            color: Colors.grey.shade500, fontSize: 14),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 35,
-                  ),
-                  SizedBox(
-                    height: Dimens.buttonMid,
-                    width: WIDTH,
-                    child: ElevatedButton(
-                        onPressed: () => print("call registration"),
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                CustomColors.lightRed),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(Dimens.radiusMin)),
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30.0),
+                    child: SizedBox(
+                      height: Dimens.textFieldSmall,
+                      child: TextField(
+                        controller: controller.firstNameController,
+                        decoration: InputDecoration(
+                            counterText: '',
+                            hintText: "First Name*",
+                            hintStyle: TextStyle(
+                                color: Colors.grey.shade500, fontSize: 14),
+                            filled: true,
+                            fillColor: Colors.grey.shade100,
+                            contentPadding: const EdgeInsets.only(left: 15),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
                             )),
-                        child: const Text(
-                          "Create an Account",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: Dimens.titleLarge),
-                        )),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Center(
-                    child: Text.rich(
-                      TextSpan(
-                        text: 'By continuing I accept the ',
-                        style: TextStyle(fontSize: 12, color: Colors.black87),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: 'terms and condition ',
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                              )),
-
-                          TextSpan(
-                            text: 'and ',
-                          ),
-
-                          TextSpan(
-                              text: 'privacy policy.',
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                              )),
-
-                          // can add more TextSpans here...
-                        ],
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                        keyboardType: TextInputType.name,
+                        maxLines: 1,
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 30,
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: SizedBox(
+                      height: Dimens.textFieldSmall,
+                      child: TextField(
+                        controller: controller.lastNameController,
+                        decoration: InputDecoration(
+                            counterText: '',
+                            hintText: "Last Name*",
+                            hintStyle: TextStyle(
+                                color: Colors.grey.shade500, fontSize: 14),
+                            filled: true,
+                            fillColor: Colors.grey.shade100,
+                            contentPadding: const EdgeInsets.only(left: 15),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            )),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                        keyboardType: TextInputType.name,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: SizedBox(
+                      height: Dimens.textFieldSmall,
+                      child: TextField(
+                        controller: controller.userNameController,
+                        decoration: InputDecoration(
+                            counterText: '',
+                            hintText: "User Name*",
+                            hintStyle: TextStyle(
+                                color: Colors.grey.shade500, fontSize: 14),
+                            filled: true,
+                            fillColor: Colors.grey.shade100,
+                            contentPadding: const EdgeInsets.only(left: 15),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            )),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                        keyboardType: TextInputType.text,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: SizedBox(
+                      height: Dimens.textFieldSmall,
+                      child: TextField(
+                        controller: controller.emailController,
+                        decoration: InputDecoration(
+                            counterText: '',
+                            hintText: "Email Address*",
+                            hintStyle: TextStyle(
+                                color: Colors.grey.shade500, fontSize: 14),
+                            filled: true,
+                            fillColor: Colors.grey.shade100,
+                            contentPadding: const EdgeInsets.only(left: 15),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            )),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                        keyboardType: TextInputType.emailAddress,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: SizedBox(
+                      height: Dimens.textFieldSmall,
+                      child: TextField(
+                        controller: controller.mobileController,
+                        decoration: InputDecoration(
+                            counterText: '',
+                            hintText: "Mobile Number*",
+                            hintStyle: TextStyle(
+                                color: Colors.grey.shade500, fontSize: 14),
+                            filled: true,
+                            fillColor: Colors.grey.shade100,
+                            contentPadding: const EdgeInsets.only(left: 15),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            )),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                        keyboardType: TextInputType.emailAddress,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: SizedBox(
+                      height: Dimens.textFieldSmall,
+                      child: TextField(
+                        controller: controller.promoController,
+                        decoration: InputDecoration(
+                            counterText: '',
+                            hintText: "Promo Code (optional)",
+                            hintStyle: TextStyle(
+                                color: Colors.grey.shade500, fontSize: 14),
+                            filled: true,
+                            fillColor: Colors.grey.shade100,
+                            contentPadding: const EdgeInsets.only(left: 15),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey.shade200),
+                              borderRadius:
+                              BorderRadius.circular(Dimens.radiusNone),
+                            )),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                        keyboardType: TextInputType.text,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ),
+
+
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15.0),
+                    child: SizedBox(
+                      height: Dimens.textFieldSmall,
+                      width: getMaxWidth(context),
+                      child: ElevatedButton(
+                          onPressed: () => print(""),
+                          style: ButtonStyle(
+                              backgroundColor:
+                              MaterialStateProperty.all<Color>(
+                                  CustomColors.primaryButtonColor),
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        Dimens.radiusNone)),
+                              )),
+                          child: const Text(
+                            "Register Now",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: Dimens.titleMid),
+                          )),
+                    ),
                   ),
                 ],
               ),
