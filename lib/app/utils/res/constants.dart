@@ -1,0 +1,2 @@
+
+const EURO_SYMBOL = "£";
