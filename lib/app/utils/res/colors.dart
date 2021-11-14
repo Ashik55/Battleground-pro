@@ -12,4 +12,11 @@ class CustomColors {
   static const Color saleColor = Color(0xffff3f3f);
 
 
+
+  static const Color card1 = Color(0xff75b1e0);
+  static const Color card2 = Color(0xffd04fff);
+  static const Color card3 = Color(0xfff6765f);
+  static const Color card4 = Color(0xffe09a75);
+
+
 }

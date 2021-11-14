@@ -61,6 +61,9 @@ dependencies:
   #Image Loader
   cached_network_image: ^3.1.0
 
+  #Shimmer
+  shimmer: ^2.0.0
+
 
 dev_dependencies:
   flutter_test:

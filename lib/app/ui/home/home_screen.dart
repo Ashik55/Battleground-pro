@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                   selectedItemColor: CustomColors.primaryColorText,
                   unselectedItemColor: Colors.grey,
                   margin:
-                      EdgeInsets.only(bottom: 30, left: 20, right: 20, top: 10),
+                  const EdgeInsets.only(bottom: 20, left: 20, right: 20, top: 10),
                   onTap: (index) => controller.onTabChange(index),
                   items: [
                     SalomonBottomBarItem(

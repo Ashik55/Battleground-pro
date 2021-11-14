@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 class PlayContoller extends BaseController {
   int selectedIndex = 0;
+   List<String> imageList = ["https://www.indianfolk.com/wp-content/uploads/2018/09/pubg-4-1070817-1024x576.jpeg"];
 
   @override
   void onInit() {
@@ -14,6 +15,8 @@ class PlayContoller extends BaseController {
 
     print("Token :: ${LocalStorage().getToken()}");
   }
+
+
 
 
   onTabChange(int index) async {
