@@ -11,6 +11,11 @@ class OngoingScreen extends StatelessWidget {
     return GetBuilder<OngoingContoller>(
         builder: (controller) => Scaffold(
             backgroundColor: CustomColors.primaryColorBackground,
+            appBar: AppBar(
+              elevation: 0,
+              title: const Text("Ongoing Matches"),
+              backgroundColor: Colors.transparent,
+            ),
             body: Padding(
               padding: const EdgeInsets.all(Dimens.basePadding),
               child: ListView(

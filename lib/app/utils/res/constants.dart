@@ -1,2 +1,3 @@
 
-const EURO_SYMBOL = "£";
+const TAKA_SYMBOL = "৳";
+const APP_NAME = "";

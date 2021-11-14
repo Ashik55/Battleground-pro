@@ -36,11 +36,7 @@ void setupStatusBar() {
   //Status Bar color Combination for both plat form
   Platform.isIOS
       ? null
-      : SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-          statusBarColor: Colors.white10,
-          systemNavigationBarColor: Colors.white10,
-          systemNavigationBarIconBrightness: Brightness.dark,
-          statusBarBrightness:
-              Brightness.dark // Dark == white status bar -- for IOS.
+      : SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+          statusBarColor: Colors.transparent,
           ));
 }

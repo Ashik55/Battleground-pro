@@ -15,8 +15,8 @@ class SplashController extends BaseController {
   void startTimer() {
     Timer(const Duration(seconds: 3), () {
       LocalStorage().getToken() == null
-          ? Get.offAllNamed(Routes.LOGIN)
-          : Get.offAllNamed(Routes.HOME);
+              ? Get.offAllNamed(Routes.WELCOME)
+              : Get.offAllNamed(Routes.HOME);
     });
   }
 }

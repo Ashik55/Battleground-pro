@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class OnGoingItem extends StatelessWidget {
+class ResultItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -51,7 +51,20 @@ class OnGoingItem extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
+
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  
+                  Chip(
+                    label: Text("Joined", style: TextStyle(color: CustomColors.primaryColorText, fontSize: Dimens.titleMinMid, fontWeight: FontWeight.w600),),
+                    // backgroundColor: Colors.red.shade400,
+                    backgroundColor: Colors.green.shade400,
+                  ),
+
+
+
                 ],
               ),
               SizedBox(height: 20),
@@ -213,7 +226,7 @@ class OnGoingItem extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
-                                "Spectate",
+                                "Watch Match",
                                 style: TextStyle(
                                     color: CustomColors.primaryColorText),
                               ),

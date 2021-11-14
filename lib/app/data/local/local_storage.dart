@@ -15,7 +15,7 @@ class LocalStorage {
   }
 
   bool getIsNew() {
-    return box.read(is_new) ?? false;
+    return box.read(is_new) ?? true;
   }
 
   setIsNew(bool value) {
