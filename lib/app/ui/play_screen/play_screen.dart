@@ -100,7 +100,7 @@ class PlayScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(Dimens.radiusMin),
                         child: Container(
                           height: 120,
-                          color: CustomColors.card1,
+                          color: CustomColors.card2,
                           child: Padding(
                             padding: const EdgeInsets.all(12),
                             child: Column(
@@ -154,7 +154,7 @@ class PlayScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(Dimens.radiusMid),
                         child: Container(
                           height: 120,
-                          color: CustomColors.card1,
+                          color: CustomColors.card3,
                           child: Padding(
                             padding: const EdgeInsets.all(12),
                             child: Column(
@@ -184,7 +184,7 @@ class PlayScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(Dimens.radiusMid),
                         child: Container(
                           height: 120,
-                          color: CustomColors.card1,
+                          color: CustomColors.card4,
                           child: Padding(
                             padding: const EdgeInsets.all(12),
                             child: Column(

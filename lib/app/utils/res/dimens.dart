@@ -18,6 +18,7 @@ class Dimens {
 
 // Text Size
   static const titleSmall = 8.0;
+  static const titleMinMid = 12.0;
   static const titleMid = 14.0;
   static const title = 16.0;
   static const titleLarge = 20.0;
