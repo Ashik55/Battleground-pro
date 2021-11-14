@@ -17,34 +17,32 @@ class ProfileScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          "Battaleground Pro",
-                          style: TextStyle(
-                              color: CustomColors.primaryColorText,
-                              fontSize: Dimens.titleLarge),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        width: 100.0,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff7c94b6),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/helmet.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 2.0,
+                          ),
                         ),
-                        Text(
-                          "0 $TAKA_SYMBOL",
-                          style: TextStyle(
-                              color: CustomColors.primaryColorText,
-                              fontSize: Dimens.titleLargeExtra),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
-                  
-                  CircleAvatar(
-                    child: Image.asset('assets/images/helmet.jpg'),
-                  ),
-                  
                   Center(
                     child: Text(
                       "Aashiqur Rahman",
@@ -54,7 +52,6 @@ class ProfileScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500),
                     ),
                   ),
-
                   SizedBox(
                     height: 10,
                   ),
@@ -71,8 +68,7 @@ class ProfileScreen extends StatelessWidget {
                               child: Text(
                                 "500$TAKA_SYMBOL",
                                 style: TextStyle(
-                                    color: CustomColors
-                                        .primaryColorBackground,
+                                    color: CustomColors.primaryColorBackground,
                                     fontSize: Dimens.title,
                                     fontWeight: FontWeight.w600),
                               ),
@@ -91,7 +87,6 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   SizedBox(
                     height: 10,
                   ),
@@ -218,7 +213,8 @@ class ProfileScreen extends StatelessWidget {
                     child: Container(
                       color: CustomColors.primaryIconColor,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 6),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 6),
                         child: Column(
                           children: [
                             Padding(
@@ -252,46 +248,46 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             const Padding(
-                              padding:
-                                  EdgeInsets.symmetric(horizontal: 8.0),
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
                               child: Divider(
                                 height: 1,
                               ),
                             ),
-
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 14),
-                              child: Row(
-                                children: const [
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Icon(Icons.edit,
-                                      color:
-                                      CustomColors.primaryColorBackground),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Text(
-                                    "Edit Profile",
-                                    style: TextStyle(
+                              child: InkWell(
+                                onTap: ()=> controller.editProfileClick(),
+                                child: Row(
+                                  children: const [
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Icon(Icons.edit,
                                         color:
-                                        CustomColors.primaryColorBackground,
-                                        fontSize: Dimens.title,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  Spacer(),
-                                  Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                    color: Colors.grey,
-                                    size: 18,
-                                  ),
-                                ],
+                                            CustomColors.primaryColorBackground),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text(
+                                      "Edit Profile",
+                                      style: TextStyle(
+                                          color:
+                                              CustomColors.primaryColorBackground,
+                                          fontSize: Dimens.title,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    Spacer(),
+                                    Icon(
+                                      Icons.arrow_forward_ios_rounded,
+                                      color: Colors.grey,
+                                      size: 18,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             const Padding(
-                              padding:
-                              EdgeInsets.symmetric(horizontal: 8.0),
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
                               child: Divider(
                                 height: 1,
                               ),
@@ -305,7 +301,7 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                   Icon(Icons.wallet_membership,
                                       color:
-                                      CustomColors.primaryColorBackground),
+                                          CustomColors.primaryColorBackground),
                                   SizedBox(
                                     width: 15,
                                   ),
@@ -313,7 +309,7 @@ class ProfileScreen extends StatelessWidget {
                                     "My Wallet",
                                     style: TextStyle(
                                         color:
-                                        CustomColors.primaryColorBackground,
+                                            CustomColors.primaryColorBackground,
                                         fontSize: Dimens.title,
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -327,8 +323,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             const Padding(
-                              padding:
-                              EdgeInsets.symmetric(horizontal: 8.0),
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
                               child: Divider(
                                 height: 1,
                               ),
@@ -342,7 +337,7 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                   Icon(Icons.info,
                                       color:
-                                      CustomColors.primaryColorBackground),
+                                          CustomColors.primaryColorBackground),
                                   SizedBox(
                                     width: 15,
                                   ),
@@ -350,7 +345,7 @@ class ProfileScreen extends StatelessWidget {
                                     "Support",
                                     style: TextStyle(
                                         color:
-                                        CustomColors.primaryColorBackground,
+                                            CustomColors.primaryColorBackground,
                                         fontSize: Dimens.title,
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -364,8 +359,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             const Padding(
-                              padding:
-                              EdgeInsets.symmetric(horizontal: 8.0),
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
                               child: Divider(
                                 height: 1,
                               ),
@@ -379,7 +373,7 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                   Icon(Icons.share,
                                       color:
-                                      CustomColors.primaryColorBackground),
+                                          CustomColors.primaryColorBackground),
                                   SizedBox(
                                     width: 15,
                                   ),
@@ -387,7 +381,7 @@ class ProfileScreen extends StatelessWidget {
                                     "Share",
                                     style: TextStyle(
                                         color:
-                                        CustomColors.primaryColorBackground,
+                                            CustomColors.primaryColorBackground,
                                         fontSize: Dimens.title,
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -401,8 +395,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             const Padding(
-                              padding:
-                              EdgeInsets.symmetric(horizontal: 8.0),
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
                               child: Divider(
                                 height: 1,
                               ),
@@ -416,7 +409,7 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                   Icon(Icons.logout,
                                       color:
-                                      CustomColors.primaryColorBackground),
+                                          CustomColors.primaryColorBackground),
                                   SizedBox(
                                     width: 15,
                                   ),
@@ -424,7 +417,7 @@ class ProfileScreen extends StatelessWidget {
                                     "Logout",
                                     style: TextStyle(
                                         color:
-                                        CustomColors.primaryColorBackground,
+                                            CustomColors.primaryColorBackground,
                                         fontSize: Dimens.title,
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -437,7 +430,6 @@ class ProfileScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
-
                           ],
                         ),
                       ),

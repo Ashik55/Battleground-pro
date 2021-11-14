@@ -21,6 +21,10 @@ class ProfileContoller extends BaseController {
     update();
   }
 
+  editProfileClick() {
+    Get.toNamed(Routes.EDIT_PROFILE);
+  }
+
 
 
 

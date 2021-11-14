@@ -1,6 +1,7 @@
-import 'package:battleground_pro/app/ui/me_screen/profile_screen.dart';
+
 import 'package:battleground_pro/app/ui/ongoing_screen/ongoing_screen.dart';
 import 'package:battleground_pro/app/ui/play_screen/play_screen.dart';
+import 'package:battleground_pro/app/ui/profile_screen/profile_screen.dart';
 import 'package:battleground_pro/app/ui/result_screen/result_screen.dart';
 import 'package:battleground_pro/app/ui/shop_screen/shop_screen.dart';
 import 'package:battleground_pro/app/utils/res/colors.dart';

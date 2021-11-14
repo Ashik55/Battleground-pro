@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'app/api/api_client.dart';
 import 'app/routes/app_pages.dart';
+import 'app/utils/helper/utility.dart';
+import 'app/utils/res/dimens.dart';
 
 void main() async {
   await GetStorage.init();
@@ -22,8 +24,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: CustomColors.primaryColorBackground,
-        primarySwatch: Colors.blue
+        primarySwatch: createMaterialColor(CustomColors.primaryColorBackground),
+        inputDecorationTheme: InputDecorationTheme(
+          labelStyle: TextStyle( fontSize: Dimens.titleMinMid)
+        )
       ),
       defaultTransition: Transition.topLevel,
       initialRoute: Routes.SPLASH,
@@ -36,7 +40,8 @@ void setupStatusBar() {
   //Status Bar color Combination for both plat form
   Platform.isIOS
       ? null
-      : SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      : SystemChrome.setSystemUIOverlayStyle(
+          SystemUiOverlayStyle.light.copyWith(
           statusBarColor: Colors.transparent,
-          ));
+        ));
 }

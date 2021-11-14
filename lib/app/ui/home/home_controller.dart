@@ -2,9 +2,9 @@
 import 'package:battleground_pro/app/base/base_controller.dart';
 import 'package:battleground_pro/app/data/local/local_storage.dart';
 import 'package:battleground_pro/app/routes/app_pages.dart';
-import 'package:battleground_pro/app/ui/me_screen/profile_screen.dart';
 import 'package:battleground_pro/app/ui/ongoing_screen/ongoing_screen.dart';
 import 'package:battleground_pro/app/ui/play_screen/play_screen.dart';
+import 'package:battleground_pro/app/ui/profile_screen/profile_screen.dart';
 import 'package:battleground_pro/app/ui/result_screen/result_screen.dart';
 import 'package:battleground_pro/app/ui/shop_screen/shop_screen.dart';
 import 'package:battleground_pro/app/utils/helper/view_helper.dart';

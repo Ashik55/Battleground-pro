@@ -1,3 +1,4 @@
+import 'package:battleground_pro/app/bindings/edit_profile_binding.dart';
 import 'package:battleground_pro/app/bindings/home_binding.dart';
 import 'package:battleground_pro/app/bindings/login_binding.dart';
 import 'package:battleground_pro/app/bindings/ongoing_binding.dart';
@@ -10,11 +11,12 @@ import 'package:battleground_pro/app/bindings/splash_binding.dart';
 import 'package:battleground_pro/app/bindings/welcome_binding.dart';
 import 'package:battleground_pro/app/ui/auth/login/login_screen.dart';
 import 'package:battleground_pro/app/ui/auth/registration/registration_screen.dart';
+import 'package:battleground_pro/app/ui/edit_profile/edit_profile_screen.dart';
 import 'package:battleground_pro/app/ui/get_started/welcome_screen.dart';
 import 'package:battleground_pro/app/ui/home/home_screen.dart';
-import 'package:battleground_pro/app/ui/me_screen/profile_screen.dart';
 import 'package:battleground_pro/app/ui/ongoing_screen/ongoing_screen.dart';
 import 'package:battleground_pro/app/ui/play_screen/play_screen.dart';
+import 'package:battleground_pro/app/ui/profile_screen/profile_screen.dart';
 import 'package:battleground_pro/app/ui/result_screen/result_screen.dart';
 import 'package:battleground_pro/app/ui/shop_screen/shop_controller.dart';
 import 'package:battleground_pro/app/ui/shop_screen/shop_screen.dart';
@@ -32,6 +34,7 @@ abstract class Routes {
   static const ONGOING = '/ongoing';
   static const PROFILE = '/profile';
   static const SHOP = '/shop';
+  static const EDIT_PROFILE = '/edit-profile';
 }
 
 class AppPages {
@@ -68,6 +71,13 @@ class AppPages {
         name: Routes.WELCOME,
         page: () => WelcomeScreen(),
         binding: WelcomeBinding()),
+
+
+    GetPage(
+        name: Routes.EDIT_PROFILE,
+        page: () => EditProfileScreen(),
+        binding: EditProfileBinding()),
+
 
   ];
 }
