@@ -294,32 +294,35 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 14),
-                              child: Row(
-                                children: const [
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Icon(Icons.wallet_membership,
-                                      color:
-                                          CustomColors.primaryColorBackground),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Text(
-                                    "My Wallet",
-                                    style: TextStyle(
+                              child: InkWell(
+                                onTap: ()=> controller.myWalletClick(),
+                                child: Row(
+                                  children: const [
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Icon(Icons.wallet_membership,
                                         color:
-                                            CustomColors.primaryColorBackground,
-                                        fontSize: Dimens.title,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  Spacer(),
-                                  Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                    color: Colors.grey,
-                                    size: 18,
-                                  ),
-                                ],
+                                            CustomColors.primaryColorBackground),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text(
+                                      "My Wallet",
+                                      style: TextStyle(
+                                          color:
+                                              CustomColors.primaryColorBackground,
+                                          fontSize: Dimens.title,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    Spacer(),
+                                    Icon(
+                                      Icons.arrow_forward_ios_rounded,
+                                      color: Colors.grey,
+                                      size: 18,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             const Padding(

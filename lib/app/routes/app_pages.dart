@@ -1,6 +1,7 @@
 import 'package:battleground_pro/app/bindings/edit_profile_binding.dart';
 import 'package:battleground_pro/app/bindings/home_binding.dart';
 import 'package:battleground_pro/app/bindings/login_binding.dart';
+import 'package:battleground_pro/app/bindings/my_wallet_binding.dart';
 import 'package:battleground_pro/app/bindings/ongoing_binding.dart';
 import 'package:battleground_pro/app/bindings/play_binding.dart';
 import 'package:battleground_pro/app/bindings/profile_binding.dart';
@@ -13,6 +14,7 @@ import 'package:battleground_pro/app/ui/auth/login/login_screen.dart';
 import 'package:battleground_pro/app/ui/auth/registration/registration_screen.dart';
 import 'package:battleground_pro/app/ui/edit_profile/edit_profile_screen.dart';
 import 'package:battleground_pro/app/ui/home/home_screen.dart';
+import 'package:battleground_pro/app/ui/my_wallet/my_wallet_screen.dart';
 import 'package:battleground_pro/app/ui/ongoing_screen/ongoing_screen.dart';
 import 'package:battleground_pro/app/ui/play_screen/play_screen.dart';
 import 'package:battleground_pro/app/ui/profile_screen/profile_screen.dart';
@@ -35,6 +37,7 @@ abstract class Routes {
   static const PROFILE = '/profile';
   static const SHOP = '/shop';
   static const EDIT_PROFILE = '/edit-profile';
+  static const MY_WALLET = '/my-wallet';
 }
 
 class AppPages {
@@ -78,6 +81,10 @@ class AppPages {
         page: () => EditProfileScreen(),
         binding: EditProfileBinding()),
 
+    GetPage(
+        name: Routes.MY_WALLET,
+        page: () => MyWalletScreen(),
+        binding: MyWalletBinding()),
 
   ];
 }
