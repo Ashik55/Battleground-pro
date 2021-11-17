@@ -1,16 +1,20 @@
 import 'package:battleground_pro/app/utils/res/colors.dart';
+import 'package:battleground_pro/app/utils/res/constants.dart';
 import 'package:battleground_pro/app/utils/res/dimens.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ShopItem extends StatelessWidget {
+  int index;
+  ShopItem(this.index);
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(Dimens.radiusMin),
       child: Container(
-        color: CustomColors.primaryButtonColor2,
+        color: CustomColors.primaryColorBackground2,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
           child: Column(
@@ -18,173 +22,41 @@ class ShopItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(Dimens.radiusMin),
-                    child: SizedBox(
-                        height: 55,
-                        width: 55,
-                        child: Image.network(
-                          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
-                          fit: BoxFit.cover,
-                        )),
-                  ),
+                  SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: Image.asset(
+                        'assets/icons/ic_uc.png',
+                        fit: BoxFit.cover,
+                      )),
                   const SizedBox(
-                    width: 10,
+                    width: 4,
                   ),
-
-                  Text(
-                    "Freefire Tournament",
+                  const Text(
+                    "60",
                     style: TextStyle(
-                        color: CustomColors.primaryColorBackground,
-                        fontSize: Dimens.title,
-                        fontWeight: FontWeight.w600),
+                        color: CustomColors.primaryColorText,
+                        fontSize: Dimens.titleLargeExtra,
+                        fontWeight: FontWeight.w700),
                   )
-
-
                 ],
               ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          "Total Prize",
-                          style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: Dimens.titleMinMid),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(3),
-                          child: Text(
-                            "1000",
-                            style: TextStyle(
-                                color: CustomColors.primaryColorBackground,
-                                fontSize: Dimens.titleMid,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "Per Kill",
-                          style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: Dimens.titleMinMid),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(3),
-                          child: Text(
-                            "1000",
-                            style: TextStyle(
-                                color: CustomColors.primaryColorBackground,
-                                fontSize: Dimens.titleMid,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "Entry Fee",
-                          style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: Dimens.titleMinMid),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(3),
-                          child: Text(
-                            "1000",
-                            style: TextStyle(
-                                color: CustomColors.primaryColorBackground,
-                                fontSize: Dimens.titleMid,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+              SizedBox(height: 30),
+              Center(
+                child: SizedBox(
+                  height: 35,
+                  child: index.isEven? Image.asset(
+                    'assets/images/uc_mid.png',
+                  ) : Image.asset(
+                    'assets/images/uc_large.png',
+                  ),
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          "Type",
-                          style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: Dimens.titleMinMid),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(3),
-                          child: Text(
-                            "1000",
-                            style: TextStyle(
-                                color: CustomColors.primaryColorBackground,
-                                fontSize: Dimens.titleMid,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "Version",
-                          style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: Dimens.titleMinMid),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(3),
-                          child: Text(
-                            "1000",
-                            style: TextStyle(
-                                color: CustomColors.primaryColorBackground,
-                                fontSize: Dimens.titleMid,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "Map",
-                          style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: Dimens.titleMinMid),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(3),
-                          child: Text(
-                            "1000",
-                            style: TextStyle(
-                                color: CustomColors.primaryColorBackground,
-                                fontSize: Dimens.titleMid,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 18),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Row(
                   children: [
                     Expanded(
@@ -195,17 +67,15 @@ class ShopItem extends StatelessWidget {
                         color: CustomColors.primaryButtonColor,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(
-                              Icons.add_to_queue_rounded,
-                              color: CustomColors.primaryIconColor,
-                            ),
+                          children:  [
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text(
-                                "Spectate",
+                                "BDT 130 $TAKA_SYMBOL",
                                 style: TextStyle(
-                                    color: CustomColors.primaryColorText),
+                                    color: CustomColors.primaryColorText,
+                                    fontSize: Dimens.title,
+                                    fontWeight: FontWeight.w700),
                               ),
                             )
                           ],

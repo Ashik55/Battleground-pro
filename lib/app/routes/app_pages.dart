@@ -12,7 +12,6 @@ import 'package:battleground_pro/app/bindings/welcome_binding.dart';
 import 'package:battleground_pro/app/ui/auth/login/login_screen.dart';
 import 'package:battleground_pro/app/ui/auth/registration/registration_screen.dart';
 import 'package:battleground_pro/app/ui/edit_profile/edit_profile_screen.dart';
-import 'package:battleground_pro/app/ui/get_started/welcome_screen.dart';
 import 'package:battleground_pro/app/ui/home/home_screen.dart';
 import 'package:battleground_pro/app/ui/ongoing_screen/ongoing_screen.dart';
 import 'package:battleground_pro/app/ui/play_screen/play_screen.dart';
@@ -21,6 +20,7 @@ import 'package:battleground_pro/app/ui/result_screen/result_screen.dart';
 import 'package:battleground_pro/app/ui/shop_screen/shop_controller.dart';
 import 'package:battleground_pro/app/ui/shop_screen/shop_screen.dart';
 import 'package:battleground_pro/app/ui/splash/splash_screen.dart';
+import 'package:battleground_pro/app/ui/welcome_screen/welcome_screen.dart';
 import 'package:get/get.dart';
 
 abstract class Routes {

@@ -164,7 +164,7 @@ class PlayScreen extends StatelessWidget {
                                   height: 20,
                                 ),
                                 Text(
-                                  "PUBG",
+                                  "FreeFire",
                                   style: TextStyle(
                                       color: CustomColors.primaryColorText,
                                       fontWeight: FontWeight.w600),
@@ -274,7 +274,8 @@ class PlayScreen extends StatelessWidget {
                                   height: 20,
                                 ),
                                 Text(
-                                  "PUBG",
+                                  "FreeFire",
+
                                   style: TextStyle(
                                       color: CustomColors.primaryColorText,
                                       fontWeight: FontWeight.w600),

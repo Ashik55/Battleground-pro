@@ -18,15 +18,15 @@ class ShopScreen extends StatelessWidget {
             ),
             body: Padding(
               padding: const EdgeInsets.all(Dimens.basePadding),
-              child: ListView(
-                shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
-                children: [
-                  ShopItem()
-                ],
-              ),
+              child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, childAspectRatio: .9),
+                  itemBuilder: (BuildContext context, int index) => Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: ShopItem(index),
+                      )),
             )));
   }
 }
-
-
